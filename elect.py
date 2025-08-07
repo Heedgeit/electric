@@ -90,7 +90,7 @@ if submit :
 
     df = df.join(d)
     st.dataframe(df)
-    model = joblib.load('random_forest.joblib')
+    model = joblib.load('catboost.joblib')
 
     pred = model.predict(df)
 
