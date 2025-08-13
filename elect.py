@@ -5,6 +5,8 @@ from datetime import datetime
 
 #####------------INPUT---------------######
 
+st.title("Hourly Electricity Usage Prediction")
+
 date = st.sidebar.date_input("choose the date")
 time = st.sidebar.time_input("Input th time")
 temp = st.sidebar.number_input("Input the average temperatue in Kelvin",min_value=262, max_value=315, value=295)
@@ -90,7 +92,7 @@ if submit :
 
     df = df.join(d)
     st.dataframe(df)
-    model = joblib.load('catboost.joblib')
+    model = joblib.load('xgboost.joblib')
 
     pred = model.predict(df)
 
